@@ -7,7 +7,7 @@ namespace rover.Classes
 {
     class Position : IPosition
     {
-        public void printPosition(Common common)
+        public void PrintPosition(Common common)
         {
 
             char dir = 'N';
@@ -27,10 +27,13 @@ namespace rover.Classes
             {
                 dir = 'W';
             }
-            Console.WriteLine(common.x + " " + common.y + " " + dir);
+            if(common.x<= 5 && common.y <= 5)
+            {
+                Console.WriteLine(common.x + " " + common.y + " " + dir);
+            }
         }
 
-        public Common setPosition(int x, int y, int facing )
+        public Common SetPosition(int x, int y, int facing )
         {
             Common common = new Common();
             common.x = x;

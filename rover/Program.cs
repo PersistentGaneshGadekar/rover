@@ -6,20 +6,17 @@ namespace rover
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            IMovement movement = new Movement();
-            IPosition position = new Position();
-            Common common = null;
-            Console.WriteLine("============1==================");
-            common = position.setPosition(1, 2, Common.N);
-            movement.process("LMLMLMLMM", common);
-            position.printPosition(common); // prints 1 3 N  
-            Console.WriteLine("============2==================");
-            common = position.setPosition(3, 3, Common.E);
-            movement.process("MMRMMRMRRM", common);
-            position.printPosition(common); // prints 1 3 N  
-            Console.WriteLine("===============================");
+            Plateau plateau = new Plateau();
+            plateau.SetPlateauSize(5, 5);
+            Rovers rovers = new Rovers();
+            rovers.CreateNewRover(1, 2, Common.N, "LMLMLMLMM", plateau);
+            rovers.CreateNewRover(3, 3, Common.E, "MMRMMRMRRM", plateau);
+            foreach (Rover rover in rovers.GetRoverList())
+            {
+                rover.PrintPosition();
+            }
             Console.ReadLine();
         }
     }

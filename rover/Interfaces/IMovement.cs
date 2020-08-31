@@ -7,8 +7,8 @@ namespace rover.Interfaces
 {
     interface IMovement
     {
-        void process(String commands,Common common);
-        void turnLeft(Common common);
-        void turnRight(Common common);
+        void Process(String commands,Common common);
+        void TurnLeft(Common common);
+        void TurnRight(Common common);
     }
 }
